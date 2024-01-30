@@ -47,7 +47,7 @@
             this.booknameLend = new DevExpress.XtraGrid.Columns.GridColumn();
             this.authorLend = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lendingdate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dateexpect = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateexpired = new DevExpress.XtraGrid.Columns.GridColumn();
             this.depositLend = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_providedLend = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colXoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -133,7 +133,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(945, 323, 975, 600);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1329, 803);
+            this.layoutControl1.Size = new System.Drawing.Size(1206, 803);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -142,7 +142,7 @@
             this.groupControl4.Controls.Add(this.gcSachMuon);
             this.groupControl4.Location = new System.Drawing.Point(14, 255);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1313, 534);
+            this.groupControl4.Size = new System.Drawing.Size(1190, 534);
             this.groupControl4.TabIndex = 5;
             this.groupControl4.Text = "Sách mượn";
             // 
@@ -154,7 +154,7 @@
             this.gcSachMuon.Name = "gcSachMuon";
             this.gcSachMuon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa});
-            this.gcSachMuon.Size = new System.Drawing.Size(1309, 498);
+            this.gcSachMuon.Size = new System.Drawing.Size(1186, 498);
             this.gcSachMuon.TabIndex = 5;
             this.gcSachMuon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSachMuon});
@@ -166,7 +166,7 @@
             this.booknameLend,
             this.authorLend,
             this.lendingdate,
-            this.dateexpect,
+            this.dateexpired,
             this.depositLend,
             this.id_providedLend,
             this.colXoa});
@@ -230,18 +230,18 @@
             this.lendingdate.VisibleIndex = 3;
             this.lendingdate.Width = 169;
             // 
-            // dateexpect
+            // dateexpired
             // 
-            this.dateexpect.Caption = "Ngày hẹn trả";
-            this.dateexpect.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dateexpect.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateexpect.FieldName = "dateexpect";
-            this.dateexpect.MaxWidth = 169;
-            this.dateexpect.MinWidth = 33;
-            this.dateexpect.Name = "dateexpect";
-            this.dateexpect.Visible = true;
-            this.dateexpect.VisibleIndex = 4;
-            this.dateexpect.Width = 169;
+            this.dateexpired.Caption = "Ngày hẹn trả";
+            this.dateexpired.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateexpired.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateexpired.FieldName = "dateexpired";
+            this.dateexpired.MaxWidth = 169;
+            this.dateexpired.MinWidth = 33;
+            this.dateexpired.Name = "dateexpired";
+            this.dateexpired.Visible = true;
+            this.dateexpired.VisibleIndex = 4;
+            this.dateexpired.Width = 169;
             // 
             // depositLend
             // 
@@ -304,7 +304,7 @@
             this.groupControl3.MaximumSize = new System.Drawing.Size(0, 237);
             this.groupControl3.MinimumSize = new System.Drawing.Size(0, 231);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1313, 237);
+            this.groupControl3.Size = new System.Drawing.Size(1190, 237);
             this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "Thông tin độc giả mượn sách";
             this.groupControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl3_Paint);
@@ -437,7 +437,7 @@
             this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(12, 0, 12, 12);
-            this.Root.Size = new System.Drawing.Size(1329, 803);
+            this.Root.Size = new System.Drawing.Size(1206, 803);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem3
@@ -445,7 +445,7 @@
             this.layoutControlItem3.Control = this.groupControl3;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1317, 241);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1194, 241);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -455,7 +455,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 241);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(5, 5);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1317, 538);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1194, 538);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -465,10 +465,10 @@
             this.layoutControl2.Controls.Add(this.grDocGia);
             this.layoutControl2.Controls.Add(this.groupControl1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(1329, 0);
+            this.layoutControl2.Location = new System.Drawing.Point(1206, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(587, 803);
+            this.layoutControl2.Size = new System.Drawing.Size(710, 803);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -479,7 +479,7 @@
             this.grDocGia.MaximumSize = new System.Drawing.Size(0, 237);
             this.grDocGia.MinimumSize = new System.Drawing.Size(0, 237);
             this.grDocGia.Name = "grDocGia";
-            this.grDocGia.Size = new System.Drawing.Size(563, 237);
+            this.grDocGia.Size = new System.Drawing.Size(686, 237);
             this.grDocGia.TabIndex = 0;
             this.grDocGia.Text = "Độc giả";
             // 
@@ -489,7 +489,7 @@
             this.gcDocGia.Location = new System.Drawing.Point(2, 34);
             this.gcDocGia.MainView = this.gvDocGia;
             this.gcDocGia.Name = "gcDocGia";
-            this.gcDocGia.Size = new System.Drawing.Size(559, 201);
+            this.gcDocGia.Size = new System.Drawing.Size(682, 201);
             this.gcDocGia.TabIndex = 0;
             this.gcDocGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDocGia});
@@ -577,7 +577,7 @@
             this.groupControl1.Controls.Add(this.gcSach);
             this.groupControl1.Location = new System.Drawing.Point(12, 253);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(563, 538);
+            this.groupControl1.Size = new System.Drawing.Size(686, 538);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Sách";
             // 
@@ -590,7 +590,7 @@
             this.gcSach.Name = "gcSach";
             this.gcSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnThem});
-            this.gcSach.Size = new System.Drawing.Size(559, 502);
+            this.gcSach.Size = new System.Drawing.Size(682, 502);
             this.gcSach.TabIndex = 0;
             this.gcSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSach});
@@ -713,7 +713,7 @@
             this.layoutControlItem1,
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(587, 803);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(710, 803);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -721,7 +721,7 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 241);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(567, 542);
+            this.layoutControlItem1.Size = new System.Drawing.Size(690, 542);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -730,7 +730,7 @@
             this.layoutControlItem2.Control = this.grDocGia;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(567, 241);
+            this.layoutControlItem2.Size = new System.Drawing.Size(690, 241);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -823,7 +823,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn booknameLend;
         private DevExpress.XtraGrid.Columns.GridColumn authorLend;
         private DevExpress.XtraGrid.Columns.GridColumn lendingdate;
-        private DevExpress.XtraGrid.Columns.GridColumn dateexpect;
+        private DevExpress.XtraGrid.Columns.GridColumn dateexpired;
         private DevExpress.XtraGrid.Columns.GridColumn colXoa;
         private DevExpress.XtraGrid.Columns.GridColumn id_book;
         private DevExpress.XtraGrid.Columns.GridColumn bookname;

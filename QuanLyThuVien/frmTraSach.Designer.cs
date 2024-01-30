@@ -69,7 +69,7 @@
             this.author = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lendingdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.deposit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dateexpect = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateexpired = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTraSach = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnTraSach = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -403,7 +403,7 @@
             this.author,
             this.lendingdate,
             this.deposit,
-            this.dateexpect,
+            this.dateexpired,
             this.colTraSach});
             this.gvSachDangMuon.DetailHeight = 394;
             this.gvSachDangMuon.GridControl = this.gcSachDangMuon;
@@ -505,18 +505,18 @@
             this.deposit.VisibleIndex = 7;
             this.deposit.Width = 107;
             // 
-            // dateexpect
+            // dateexpired
             // 
-            this.dateexpect.Caption = "Ngày hẹn trả";
-            this.dateexpect.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dateexpect.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateexpect.FieldName = "dateexpect";
-            this.dateexpect.MaxWidth = 171;
-            this.dateexpect.MinWidth = 29;
-            this.dateexpect.Name = "dateexpect";
-            this.dateexpect.Visible = true;
-            this.dateexpect.VisibleIndex = 6;
-            this.dateexpect.Width = 107;
+            this.dateexpired.Caption = "Ngày hẹn trả";
+            this.dateexpired.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateexpired.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateexpired.FieldName = "dateexpired";
+            this.dateexpired.MaxWidth = 171;
+            this.dateexpired.MinWidth = 29;
+            this.dateexpired.Name = "dateexpired";
+            this.dateexpired.Visible = true;
+            this.dateexpired.VisibleIndex = 6;
+            this.dateexpired.Width = 107;
             // 
             // colTraSach
             // 
@@ -634,7 +634,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn bookname;
         private DevExpress.XtraGrid.Columns.GridColumn author;
         private DevExpress.XtraGrid.Columns.GridColumn lendingdate;
-        private DevExpress.XtraGrid.Columns.GridColumn dateexpect;
+        private DevExpress.XtraGrid.Columns.GridColumn dateexpired;
         private DevExpress.XtraGrid.Columns.GridColumn colTraSach;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnTraSach;
         private DevExpress.XtraGrid.Columns.GridColumn id_lendingbook;

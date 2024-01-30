@@ -33,7 +33,7 @@ namespace QuanLyThuVien
 
         private void loadReturningBook()
         {
-            string sql = "select lendingbook.id_user, provided.id_book, lendingbook.id_lendingbook, lendingbook.id_provided, book.bookname, book.author, lendingbook.lendingdate, lendingbook.dateexpect, lendingbook.deposit from lendingbook join provided on lendingbook.id_provided = provided.id_provided join book on provided.id_book = book.id_book where lendingbook.id_student = '" + txtMaDocGia.EditValue.ToString() + "'";
+            string sql = "select lendingbook.id_user, provided.id_book, lendingbook.id_lendingbook, lendingbook.id_provided, book.bookname, book.author, lendingbook.lendingdate, lendingbook.dateexpired, lendingbook.deposit from lendingbook join provided on lendingbook.id_provided = provided.id_provided join book on provided.id_book = book.id_book where lendingbook.id_student = '" + txtMaDocGia.EditValue.ToString() + "'";
             DataTable dt = con.readData(sql);
             if (dt != null)
             {
@@ -49,7 +49,7 @@ namespace QuanLyThuVien
         private void btnTraSach_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int row_index = gvSachDangMuon.FocusedRowHandle;
-            DateTime firstDT = Convert.ToDateTime(gvSachDangMuon.GetRowCellValue(row_index, "dateexpect").ToString());
+            DateTime firstDT = Convert.ToDateTime(gvSachDangMuon.GetRowCellValue(row_index, "dateexpired").ToString());
             DateTime secondDT = DateTime.Now.Date;
             if (DateTime.Compare(firstDT, secondDT) > 0)
             {

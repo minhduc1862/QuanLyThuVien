@@ -110,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Con_CRUD.cs" />
+    <Compile Include="frmHanTheDatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHanTheDatePicker.Designer.cs">
+      <DependentUpon>frmHanTheDatePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatePicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="frmDatLaiMatKhau.Designer.cs">
       <DependentUpon>frmDatLaiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLyThe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyThe.Designer.cs">
+      <DependentUpon>frmQuanLyThe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSachBiHong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +205,12 @@
     </Compile>
     <Compile Include="frmSachQuaHan.Designer.cs">
       <DependentUpon>frmSachQuaHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDauSachDuocPhucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDauSachDuocPhucVu.Designer.cs">
+      <DependentUpon>frmDauSachDuocPhucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSachTrongThuVien.cs">
       <SubType>Form</SubType>
@@ -282,12 +300,21 @@
     <Compile Include="Report\rptSachQuaHan.Designer.cs">
       <DependentUpon>rptSachQuaHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptDauSachDuocPhucVu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptDauSachDuocPhucVu.Designer.cs">
+      <DependentUpon>rptDauSachDuocPhucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptSachTrongThuVien.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\rptSachTrongThuVien.Designer.cs">
       <DependentUpon>rptSachTrongThuVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmHanTheDatePicker.resx">
+      <DependentUpon>frmHanTheDatePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDatePicker.resx">
       <DependentUpon>frmDatePicker.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +354,9 @@
     <EmbeddedResource Include="frmQuanLySach.resx">
       <DependentUpon>frmQuanLySach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyThe.resx">
+      <DependentUpon>frmQuanLyThe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyTheLoai.resx">
       <DependentUpon>frmQuanLyTheLoai.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSachQuaHan.resx">
       <DependentUpon>frmSachQuaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDauSachDuocPhucVu.resx">
+      <DependentUpon>frmDauSachDuocPhucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSachTrongThuVien.resx">
       <DependentUpon>frmSachTrongThuVien.cs</DependentUpon>
@@ -379,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptSachQuaHan.resx">
       <DependentUpon>rptSachQuaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDauSachDuocPhucVu.resx">
+      <DependentUpon>rptDauSachDuocPhucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptSachTrongThuVien.resx">
       <DependentUpon>rptSachTrongThuVien.cs</DependentUpon>

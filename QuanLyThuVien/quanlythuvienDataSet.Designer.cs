@@ -1600,7 +1600,7 @@ namespace QuanLyThuVien {
             
             private global::System.Data.DataColumn columnlendingdate;
             
-            private global::System.Data.DataColumn columndateexpect;
+            private global::System.Data.DataColumn columndateexpired;
             
             private global::System.Data.DataColumn columndeposit;
             
@@ -1679,9 +1679,9 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dateexpectColumn {
+            public global::System.Data.DataColumn dateexpiredColumn {
                 get {
-                    return this.columndateexpect;
+                    return this.columndateexpired;
                 }
             }
             
@@ -1730,7 +1730,7 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lendingbookRow AddlendingbookRow(string id_lendingbook, usersRow parentusersRowByFK_lendingbook_users, providedRow parentprovidedRowByFK_lendingbook_provided, studentRow parentstudentRowByFK_lendingbook_student, System.DateTime lendingdate, System.DateTime dateexpect, int deposit) {
+            public lendingbookRow AddlendingbookRow(string id_lendingbook, usersRow parentusersRowByFK_lendingbook_users, providedRow parentprovidedRowByFK_lendingbook_provided, studentRow parentstudentRowByFK_lendingbook_student, System.DateTime lendingdate, System.DateTime dateexpired, int deposit) {
                 lendingbookRow rowlendingbookRow = ((lendingbookRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_lendingbook,
@@ -1738,7 +1738,7 @@ namespace QuanLyThuVien {
                         null,
                         null,
                         lendingdate,
-                        dateexpect,
+                        dateexpired,
                         deposit};
                 if ((parentusersRowByFK_lendingbook_users != null)) {
                     columnValuesArray[1] = parentusersRowByFK_lendingbook_users[0];
@@ -1783,7 +1783,7 @@ namespace QuanLyThuVien {
                 this.columnid_provided = base.Columns["id_provided"];
                 this.columnid_student = base.Columns["id_student"];
                 this.columnlendingdate = base.Columns["lendingdate"];
-                this.columndateexpect = base.Columns["dateexpect"];
+                this.columndateexpired = base.Columns["dateexpired"];
                 this.columndeposit = base.Columns["deposit"];
             }
             
@@ -1800,8 +1800,8 @@ namespace QuanLyThuVien {
                 base.Columns.Add(this.columnid_student);
                 this.columnlendingdate = new global::System.Data.DataColumn("lendingdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlendingdate);
-                this.columndateexpect = new global::System.Data.DataColumn("dateexpect", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndateexpect);
+                this.columndateexpired = new global::System.Data.DataColumn("dateexpired", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateexpired);
                 this.columndeposit = new global::System.Data.DataColumn("deposit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndeposit);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -3720,7 +3720,7 @@ namespace QuanLyThuVien {
             
             private global::System.Data.DataColumn columnlendingdate;
             
-            private global::System.Data.DataColumn columndateexpect;
+            private global::System.Data.DataColumn columndateexpired;
             
             private global::System.Data.DataColumn columndeposit;
             
@@ -3799,9 +3799,9 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dateexpectColumn {
+            public global::System.Data.DataColumn dateexpiredColumn {
                 get {
-                    return this.columndateexpect;
+                    return this.columndateexpired;
                 }
             }
             
@@ -3850,7 +3850,7 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sachdangduocmuonRow AddsachdangduocmuonRow(string id_student, string id_book, string bookname, string author, System.DateTime lendingdate, System.DateTime dateexpect, int deposit) {
+            public sachdangduocmuonRow AddsachdangduocmuonRow(string id_student, string id_book, string bookname, string author, System.DateTime lendingdate, System.DateTime dateexpired, int deposit) {
                 sachdangduocmuonRow rowsachdangduocmuonRow = ((sachdangduocmuonRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_student,
@@ -3858,7 +3858,7 @@ namespace QuanLyThuVien {
                         bookname,
                         author,
                         lendingdate,
-                        dateexpect,
+                        dateexpired,
                         deposit};
                 rowsachdangduocmuonRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsachdangduocmuonRow);
@@ -3887,7 +3887,7 @@ namespace QuanLyThuVien {
                 this.columnbookname = base.Columns["bookname"];
                 this.columnauthor = base.Columns["author"];
                 this.columnlendingdate = base.Columns["lendingdate"];
-                this.columndateexpect = base.Columns["dateexpect"];
+                this.columndateexpired = base.Columns["dateexpired"];
                 this.columndeposit = base.Columns["deposit"];
             }
             
@@ -3904,8 +3904,8 @@ namespace QuanLyThuVien {
                 base.Columns.Add(this.columnauthor);
                 this.columnlendingdate = new global::System.Data.DataColumn("lendingdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlendingdate);
-                this.columndateexpect = new global::System.Data.DataColumn("dateexpect", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndateexpect);
+                this.columndateexpired = new global::System.Data.DataColumn("dateexpired", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateexpired);
                 this.columndeposit = new global::System.Data.DataColumn("deposit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndeposit);
                 this.columnid_student.MaxLength = 15;
@@ -4055,7 +4055,7 @@ namespace QuanLyThuVien {
             
             private global::System.Data.DataColumn columnlendingdate;
             
-            private global::System.Data.DataColumn columndateexpect;
+            private global::System.Data.DataColumn columndateexpired;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4132,9 +4132,9 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dateexpectColumn {
+            public global::System.Data.DataColumn dateexpiredColumn {
                 get {
-                    return this.columndateexpect;
+                    return this.columndateexpired;
                 }
             }
             
@@ -4175,7 +4175,7 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sachquahanRow AddsachquahanRow(string id_student, string id_book, string bookname, string author, System.DateTime lendingdate, System.DateTime dateexpect) {
+            public sachquahanRow AddsachquahanRow(string id_student, string id_book, string bookname, string author, System.DateTime lendingdate, System.DateTime dateexpired) {
                 sachquahanRow rowsachquahanRow = ((sachquahanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_student,
@@ -4183,7 +4183,7 @@ namespace QuanLyThuVien {
                         bookname,
                         author,
                         lendingdate,
-                        dateexpect};
+                        dateexpired};
                 rowsachquahanRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsachquahanRow);
                 return rowsachquahanRow;
@@ -4218,7 +4218,7 @@ namespace QuanLyThuVien {
                 this.columnbookname = base.Columns["bookname"];
                 this.columnauthor = base.Columns["author"];
                 this.columnlendingdate = base.Columns["lendingdate"];
-                this.columndateexpect = base.Columns["dateexpect"];
+                this.columndateexpired = base.Columns["dateexpired"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4234,8 +4234,8 @@ namespace QuanLyThuVien {
                 base.Columns.Add(this.columnauthor);
                 this.columnlendingdate = new global::System.Data.DataColumn("lendingdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlendingdate);
-                this.columndateexpect = new global::System.Data.DataColumn("dateexpect", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndateexpect);
+                this.columndateexpired = new global::System.Data.DataColumn("dateexpired", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateexpired);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_book}, true));
                 this.columnid_student.MaxLength = 15;
@@ -4807,17 +4807,17 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime dateexpect {
+            public System.DateTime dateexpired {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablelendingbook.dateexpectColumn]));
+                        return ((global::System.DateTime)(this[this.tablelendingbook.dateexpiredColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpect\' in table \'lendingbook\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpired\' in table \'lendingbook\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelendingbook.dateexpectColumn] = value;
+                    this[this.tablelendingbook.dateexpiredColumn] = value;
                 }
             }
             
@@ -4920,14 +4920,14 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdateexpectNull() {
-                return this.IsNull(this.tablelendingbook.dateexpectColumn);
+            public bool IsdateexpiredNull() {
+                return this.IsNull(this.tablelendingbook.dateexpiredColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdateexpectNull() {
-                this[this.tablelendingbook.dateexpectColumn] = global::System.Convert.DBNull;
+            public void SetdateexpiredNull() {
+                this[this.tablelendingbook.dateexpiredColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6203,17 +6203,17 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime dateexpect {
+            public System.DateTime dateexpired {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablesachdangduocmuon.dateexpectColumn]));
+                        return ((global::System.DateTime)(this[this.tablesachdangduocmuon.dateexpiredColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpect\' in table \'sachdangduocmuon\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpired\' in table \'sachdangduocmuon\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesachdangduocmuon.dateexpectColumn] = value;
+                    this[this.tablesachdangduocmuon.dateexpiredColumn] = value;
                 }
             }
             
@@ -6295,14 +6295,14 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdateexpectNull() {
-                return this.IsNull(this.tablesachdangduocmuon.dateexpectColumn);
+            public bool IsdateexpiredNull() {
+                return this.IsNull(this.tablesachdangduocmuon.dateexpiredColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdateexpectNull() {
-                this[this.tablesachdangduocmuon.dateexpectColumn] = global::System.Convert.DBNull;
+            public void SetdateexpiredNull() {
+                this[this.tablesachdangduocmuon.dateexpiredColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6409,17 +6409,17 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime dateexpect {
+            public System.DateTime dateexpired {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablesachquahan.dateexpectColumn]));
+                        return ((global::System.DateTime)(this[this.tablesachquahan.dateexpiredColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpect\' in table \'sachquahan\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dateexpired\' in table \'sachquahan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesachquahan.dateexpectColumn] = value;
+                    this[this.tablesachquahan.dateexpiredColumn] = value;
                 }
             }
             
@@ -6473,14 +6473,14 @@ namespace QuanLyThuVien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdateexpectNull() {
-                return this.IsNull(this.tablesachquahan.dateexpectColumn);
+            public bool IsdateexpiredNull() {
+                return this.IsNull(this.tablesachquahan.dateexpiredColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdateexpectNull() {
-                this[this.tablesachquahan.dateexpectColumn] = global::System.Convert.DBNull;
+            public void SetdateexpiredNull() {
+                this[this.tablesachquahan.dateexpiredColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8202,12 +8202,12 @@ SELECT id_booktype, booktypename FROM booktype WHERE (id_booktype = @id_booktype
             tableMapping.ColumnMappings.Add("id_provided", "id_provided");
             tableMapping.ColumnMappings.Add("id_student", "id_student");
             tableMapping.ColumnMappings.Add("lendingdate", "lendingdate");
-            tableMapping.ColumnMappings.Add("dateexpect", "dateexpect");
+            tableMapping.ColumnMappings.Add("dateexpired", "dateexpired");
             tableMapping.ColumnMappings.Add("deposit", "deposit");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[lendingbook] WHERE (([id_lendingbook] = @Original_id_lendingbook) AND ((@IsNull_id_user = 1 AND [id_user] IS NULL) OR ([id_user] = @Original_id_user)) AND ((@IsNull_id_provided = 1 AND [id_provided] IS NULL) OR ([id_provided] = @Original_id_provided)) AND ((@IsNull_id_student = 1 AND [id_student] IS NULL) OR ([id_student] = @Original_id_student)) AND ((@IsNull_lendingdate = 1 AND [lendingdate] IS NULL) OR ([lendingdate] = @Original_lendingdate)) AND ((@IsNull_dateexpect = 1 AND [dateexpect] IS NULL) OR ([dateexpect] = @Original_dateexpect)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[lendingbook] WHERE (([id_lendingbook] = @Original_id_lendingbook) AND ((@IsNull_id_user = 1 AND [id_user] IS NULL) OR ([id_user] = @Original_id_user)) AND ((@IsNull_id_provided = 1 AND [id_provided] IS NULL) OR ([id_provided] = @Original_id_provided)) AND ((@IsNull_id_student = 1 AND [id_student] IS NULL) OR ([id_student] = @Original_id_student)) AND ((@IsNull_lendingdate = 1 AND [lendingdate] IS NULL) OR ([lendingdate] = @Original_lendingdate)) AND ((@IsNull_dateexpired = 1 AND [dateexpired] IS NULL) OR ([dateexpired] = @Original_dateexpired)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_lendingbook", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_lendingbook", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_user", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_user", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8218,33 +8218,33 @@ SELECT id_booktype, booktypename FROM booktype WHERE (id_booktype = @id_booktype
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_student", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_student", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lendingdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lendingdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateexpect", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateexpect", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateexpired", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateexpired", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[lendingbook] ([id_lendingbook], [id_user], [id_provided], [id_student], [lendingdate], [dateexpect], [deposit]) VALUES (@id_lendingbook, @id_user, @id_provided, @id_student, @lendingdate, @dateexpect, @deposit);
-SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect, deposit FROM lendingbook WHERE (id_lendingbook = @id_lendingbook)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[lendingbook] ([id_lendingbook], [id_user], [id_provided], [id_student], [lendingdate], [dateexpired], [deposit]) VALUES (@id_lendingbook, @id_user, @id_provided, @id_student, @lendingdate, @dateexpired, @deposit);
+SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpired, deposit FROM lendingbook WHERE (id_lendingbook = @id_lendingbook)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_lendingbook", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_lendingbook", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_user", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_user", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_provided", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_provided", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_student", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_student", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lendingdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateexpect", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateexpired", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[lendingbook] SET [id_lendingbook] = @id_lendingbook, [id_user] = @id_user, [id_provided] = @id_provided, [id_student] = @id_student, [lendingdate] = @lendingdate, [dateexpect] = @dateexpect, [deposit] = @deposit WHERE (([id_lendingbook] = @Original_id_lendingbook) AND ((@IsNull_id_user = 1 AND [id_user] IS NULL) OR ([id_user] = @Original_id_user)) AND ((@IsNull_id_provided = 1 AND [id_provided] IS NULL) OR ([id_provided] = @Original_id_provided)) AND ((@IsNull_id_student = 1 AND [id_student] IS NULL) OR ([id_student] = @Original_id_student)) AND ((@IsNull_lendingdate = 1 AND [lendingdate] IS NULL) OR ([lendingdate] = @Original_lendingdate)) AND ((@IsNull_dateexpect = 1 AND [dateexpect] IS NULL) OR ([dateexpect] = @Original_dateexpect)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)));
-SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect, deposit FROM lendingbook WHERE (id_lendingbook = @id_lendingbook)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[lendingbook] SET [id_lendingbook] = @id_lendingbook, [id_user] = @id_user, [id_provided] = @id_provided, [id_student] = @id_student, [lendingdate] = @lendingdate, [dateexpired] = @dateexpired, [deposit] = @deposit WHERE (([id_lendingbook] = @Original_id_lendingbook) AND ((@IsNull_id_user = 1 AND [id_user] IS NULL) OR ([id_user] = @Original_id_user)) AND ((@IsNull_id_provided = 1 AND [id_provided] IS NULL) OR ([id_provided] = @Original_id_provided)) AND ((@IsNull_id_student = 1 AND [id_student] IS NULL) OR ([id_student] = @Original_id_student)) AND ((@IsNull_lendingdate = 1 AND [lendingdate] IS NULL) OR ([lendingdate] = @Original_lendingdate)) AND ((@IsNull_dateexpired = 1 AND [dateexpired] IS NULL) OR ([dateexpired] = @Original_dateexpired)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)));
+SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpired, deposit FROM lendingbook WHERE (id_lendingbook = @id_lendingbook)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_lendingbook", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_lendingbook", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_user", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_user", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_provided", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_provided", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_student", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_student", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lendingdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateexpect", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateexpired", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_lendingbook", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_lendingbook", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_user", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_user", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8255,8 +8255,8 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_student", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_student", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lendingdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lendingdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lendingdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateexpect", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateexpect", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpect", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateexpired", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateexpired", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateexpired", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "deposit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -8274,8 +8274,8 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect," +
-                " deposit FROM dbo.lendingbook";
+            this._commandCollection[0].CommandText = "SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpired" +
+                ", deposit FROM dbo.lendingbook";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8336,7 +8336,7 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpect, global::System.Nullable<int> Original_deposit) {
+        public virtual int Delete(string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpired, global::System.Nullable<int> Original_deposit) {
             if ((Original_id_lendingbook == null)) {
                 throw new global::System.ArgumentNullException("Original_id_lendingbook");
             }
@@ -8375,9 +8375,9 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_dateexpect.HasValue == true)) {
+            if ((Original_dateexpired.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_dateexpect.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_dateexpired.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
@@ -8411,7 +8411,7 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id_lendingbook, string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpect, global::System.Nullable<int> deposit) {
+        public virtual int Insert(string id_lendingbook, string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpired, global::System.Nullable<int> deposit) {
             if ((id_lendingbook == null)) {
                 throw new global::System.ArgumentNullException("id_lendingbook");
             }
@@ -8442,8 +8442,8 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((dateexpect.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(dateexpect.Value));
+            if ((dateexpired.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(dateexpired.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -8474,7 +8474,7 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id_lendingbook, string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpect, global::System.Nullable<int> deposit, string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpect, global::System.Nullable<int> Original_deposit) {
+        public virtual int Update(string id_lendingbook, string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpired, global::System.Nullable<int> deposit, string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpired, global::System.Nullable<int> Original_deposit) {
             if ((id_lendingbook == null)) {
                 throw new global::System.ArgumentNullException("id_lendingbook");
             }
@@ -8505,8 +8505,8 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((dateexpect.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(dateexpect.Value));
+            if ((dateexpired.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(dateexpired.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -8555,9 +8555,9 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_dateexpect.HasValue == true)) {
+            if ((Original_dateexpired.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_dateexpect.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_dateexpired.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
@@ -8591,8 +8591,8 @@ SELECT id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpect, global::System.Nullable<int> deposit, string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpect, global::System.Nullable<int> Original_deposit) {
-            return this.Update(Original_id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpect, deposit, Original_id_lendingbook, Original_id_user, Original_id_provided, Original_id_student, Original_lendingdate, Original_dateexpect, Original_deposit);
+        public virtual int Update(string id_user, string id_provided, string id_student, global::System.Nullable<global::System.DateTime> lendingdate, global::System.Nullable<global::System.DateTime> dateexpired, global::System.Nullable<int> deposit, string Original_id_lendingbook, string Original_id_user, string Original_id_provided, string Original_id_student, global::System.Nullable<global::System.DateTime> Original_lendingdate, global::System.Nullable<global::System.DateTime> Original_dateexpired, global::System.Nullable<int> Original_deposit) {
+            return this.Update(Original_id_lendingbook, id_user, id_provided, id_student, lendingdate, dateexpired, deposit, Original_id_lendingbook, Original_id_user, Original_id_provided, Original_id_student, Original_lendingdate, Original_dateexpired, Original_deposit);
         }
     }
     
@@ -10983,7 +10983,7 @@ SELECT id_user, username, password, fullname, dob, sex, number, address, state, 
             tableMapping.ColumnMappings.Add("bookname", "bookname");
             tableMapping.ColumnMappings.Add("author", "author");
             tableMapping.ColumnMappings.Add("lendingdate", "lendingdate");
-            tableMapping.ColumnMappings.Add("dateexpect", "dateexpect");
+            tableMapping.ColumnMappings.Add("dateexpired", "dateexpired");
             tableMapping.ColumnMappings.Add("deposit", "deposit");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -11001,8 +11001,8 @@ SELECT id_user, username, password, fullname, dob, sex, number, address, state, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_student, id_book, bookname, author, lendingdate, dateexpect, deposit\r\nF" +
-                "ROM     sachdangduocmuon";
+            this._commandCollection[0].CommandText = "SELECT id_student, id_book, bookname, author, lendingdate, dateexpired, deposit\r\n" +
+                "FROM     sachdangduocmuon";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11157,7 +11157,7 @@ SELECT id_user, username, password, fullname, dob, sex, number, address, state, 
             tableMapping.ColumnMappings.Add("bookname", "bookname");
             tableMapping.ColumnMappings.Add("author", "author");
             tableMapping.ColumnMappings.Add("lendingdate", "lendingdate");
-            tableMapping.ColumnMappings.Add("dateexpect", "dateexpect");
+            tableMapping.ColumnMappings.Add("dateexpired", "dateexpired");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

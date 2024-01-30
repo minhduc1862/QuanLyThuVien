@@ -28,6 +28,7 @@ namespace QuanLyThuVien
             {
                 gcSach.DataSource = dt;
             }
+            
         }
 
         private void loadBookType()
@@ -91,6 +92,12 @@ namespace QuanLyThuVien
                 lueLoaiSach.Focus();
                 return;
             }
+            if (txtGiatien.EditValue.Equals(""))
+            {
+                XtraMessageBox.Show("Bạn chưa nhập giá tiền\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGiatien.Focus();
+                return;
+            }
             try
             {
                 namXuatban = Int32.Parse(txtNamXuatBan.EditValue.ToString());
@@ -145,7 +152,7 @@ namespace QuanLyThuVien
                 btnLamMoi.PerformClick();
                 return;
             }
-            string sqlC = "insert into book values ('" + con.taoID("B", sqlR) + "', '" + lueLoaiSach.EditValue.ToString() + "', N'" + txtTenSach.EditValue.ToString() + "', N'" + txtTacGia.EditValue.ToString() + "', N'" + txtNhaXuatBan.EditValue.ToString() + "', '" + namXuatban + "', '" + soTrang + "')";
+            string sqlC = "insert into book values ('" + con.taoID("B", sqlR) + "', '" + lueLoaiSach.EditValue.ToString() + "', N'" + txtTenSach.EditValue.ToString() + "', N'" + txtTacGia.EditValue.ToString() + "', N'" + txtNhaXuatBan.EditValue.ToString() + "', '" + namXuatban + "', '" + soTrang + "', '"+ txtGiatien.EditValue.ToString() +"')";
             if (con.exeData(sqlC))
             {
                 loadData();
@@ -218,30 +225,30 @@ namespace QuanLyThuVien
                 txtSoTrang.Focus();
                 return;
             }
-            bool checkB = false;
-            string sql = "select id_booktype, bookname from book where id_booktype = '" + lueLoaiSach.EditValue.ToString().Trim() + "' and bookname = N'" + txtTenSach.EditValue.ToString().Trim() + "'";
-            DataTable dt = new DataTable();
-            dt = con.readData(sql);
-            if (dt != null)
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-                    if (lueLoaiSach.EditValue.ToString().Trim().Equals(dr["id_booktype"].ToString()) && txtTenSach.EditValue.ToString().Trim().Equals(dr["bookname"].ToString()))
-                    {
-                        checkB = true;
-                        break;
-                    }
-                }
-            }
-            if (checkB)
-            {
-                XtraMessageBox.Show("Sách có tên \"" + txtTenSach.EditValue.ToString() + "\" thuộc loại sách có mã \"" + lueLoaiSach.EditValue.ToString() + "\" đã tồn tại\r\nVui lòng nhập tên khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnLamMoi.PerformClick();
-                return;
-            }
+            //bool checkB = false;
+            //string sql = "select id_book, bookname from book where id_booktype = '" + lueLoaiSach.EditValue.ToString().Trim() + "' and bookname = N'" + txtTenSach.EditValue.ToString().Trim() + "'";
+            //DataTable dt = new DataTable();
+            //dt = con.readData(sql);
+            //if (dt != null)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        if (lueLoaiSach.EditValue.ToString().Trim().Equals(dr["id_book"].ToString()) && txtTenSach.EditValue.ToString().Trim().Equals(dr["bookname"].ToString()))
+            //        {
+            //            checkB = true;
+            //            break;
+            //        }
+            //    }
+            //}
+            //if (checkB)
+            //{
+            //    XtraMessageBox.Show("Sách có tên \"" + txtTenSach.EditValue.ToString() + "\" thuộc loại sách có mã \"" + lueLoaiSach.EditValue.ToString() + "\" đã tồn tại\r\nVui lòng nhập tên khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    btnLamMoi.PerformClick();
+            //    return;
+            //}
             if (XtraMessageBox.Show("Bạn có chắc chắn muốn sửa sách đang chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {                
-                string sqlU = "update book set bookname = N'" + txtTenSach.EditValue.ToString() + "', author = N'" + txtTacGia.EditValue.ToString() + "', publisher = N'" + txtNhaXuatBan.EditValue.ToString() + "', publishingyear = '" + namXuatban + "', pages = '" + soTrang + "', id_booktype = '" + lueLoaiSach.EditValue.ToString() + "' where id_book = '" + txtMaSach.EditValue.ToString() + "'";
+                string sqlU = "update book set id_booktype = '" + lueLoaiSach.EditValue.ToString() + "', bookname = N'" + txtTenSach.EditValue.ToString() + "', author = N'" + txtTacGia.EditValue.ToString() + "', publisher = N'" + txtNhaXuatBan.EditValue.ToString() + "', publishingyear = '" + namXuatban + "', pages = '" + soTrang + "', price = '"+txtGiatien.EditValue.ToString()+"' where id_book = '" + txtMaSach.EditValue.ToString() + "'";
                 if (con.exeData(sqlU))
                 {
                     loadData();
@@ -289,6 +296,7 @@ namespace QuanLyThuVien
             txtSoTrang.EditValue = null;
             txtTenSach.Focus();
             lueLoaiSach.EditValue = "";
+            txtGiatien.EditValue = null;
         }
 
         private void gcSach_MouseCaptureChanged(object sender, EventArgs e)
@@ -301,6 +309,7 @@ namespace QuanLyThuVien
             string colPublishingYear = "publishingyear";
             string colPages = "pages";
             string colType = "id_booktype";
+            string colPrice = "price";
             if ((gvSach.GetRowCellValue(row_index, colID) != null) && (gvSach.GetRowCellValue(row_index, colName) != null) && (gvSach.GetRowCellValue(row_index, colAuthor) != null) && (gvSach.GetRowCellValue(row_index, colPublisher) != null) && (gvSach.GetRowCellValue(row_index, colPublishingYear) != null) && (gvSach.GetRowCellValue(row_index, colPages) != null) && (gvSach.GetRowCellValue(row_index, colType) != null))
             {
                 txtMaSach.EditValue = gvSach.GetRowCellValue(row_index, colID).ToString();
@@ -310,6 +319,7 @@ namespace QuanLyThuVien
                 txtNamXuatBan.EditValue = gvSach.GetRowCellValue(row_index, colPublishingYear).ToString();
                 txtSoTrang.EditValue = gvSach.GetRowCellValue(row_index, colPages).ToString();
                 lueLoaiSach.EditValue = gvSach.GetRowCellValue(row_index, colType).ToString();
+                txtGiatien.EditValue = gvSach.GetRowCellValue(row_index, colPrice).ToString();
             }
         }
     }

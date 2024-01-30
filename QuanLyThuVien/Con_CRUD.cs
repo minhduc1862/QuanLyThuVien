@@ -39,12 +39,29 @@ namespace QuanLyThuVien
                 sc.ExecuteNonQuery();
                 check = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 check = false;
             }
             closeConnect();
             return check;
+        }
+
+        public string exeValue(string cmd)
+        {
+            string value = "";
+            openConnect();
+            try
+            {
+                SqlCommand sc = new SqlCommand(cmd, con);
+                value = sc.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            closeConnect();
+            return value;
         }
 
         //ReadData: Doc du lieu tu bang ra DataTable
@@ -92,7 +109,7 @@ namespace QuanLyThuVien
                         count++; //Khong sai thu tu
                     }
                 }
-                if (check) //Gan ID bị thieu cho ID duoc creat
+                if (check) //Gan ID bị thieu cho ID duoc create
                 {
                     countRow = count;
                 }

@@ -55,7 +55,7 @@ namespace QuanLyThuVien
 
         private void loadData()
         {
-            txtXinChao.Caption = "Xin chào: " + name;
+            txtXinChao.Caption = name;
             bool check = false;
             string sql = "select mod from users where id_user = '" + id + "'";
             DataTable dt = new DataTable();
@@ -132,6 +132,20 @@ namespace QuanLyThuVien
             if(frm == null)
             {
                 frmDocGia f = new frmDocGia();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+        private void btnQuanlythe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = formCheck(typeof(frmQuanLyThe));
+            if (frm == null)
+            {
+                frmQuanLyThe f = new frmQuanLyThe();
                 f.MdiParent = this;
                 f.Show();
             }
@@ -336,6 +350,21 @@ namespace QuanLyThuVien
             }
         }
 
+        private void btnDauSach_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = formCheck(typeof(frmDauSachDuocPhucVu));
+            if (frm == null)
+            {
+                frmDauSachDuocPhucVu f = new frmDauSachDuocPhucVu();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
         private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(openLoginForm));
@@ -359,11 +388,6 @@ namespace QuanLyThuVien
             {                
                 e.Cancel = true;
             }
-        }
-
-        private void btnQuanlythe_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

@@ -27,7 +27,7 @@ namespace QuanLyThuVien.Report
             txtTenSach.DataBindings.Add("Text", DataSource, "bookname");
             txtTacGia.DataBindings.Add("Text", DataSource, "author");
             txtNgayMuon.DataBindings.Add("Text", DataSource, "lendingdate");
-            txtNgayHenTra.DataBindings.Add("Text", DataSource, "dateexpect");
+            txtNgayHenTra.DataBindings.Add("Text", DataSource, "dateexpired");
             txtTienDatCoc.DataBindings.Add("Text", DataSource, "deposit");            
         }
     }

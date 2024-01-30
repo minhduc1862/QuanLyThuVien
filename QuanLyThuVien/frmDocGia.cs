@@ -15,6 +15,7 @@ namespace QuanLyThuVien
     {
         Con_CRUD con = new Con_CRUD();
         string sqlR = "select * from student";
+        string sqlT = "select * from librarycard";
         public frmDocGia()
         {
             InitializeComponent();
@@ -71,9 +72,15 @@ namespace QuanLyThuVien
                 txtSoDienThoai.Focus();
                 return;
             }
+            frmHanTheDatePicker frm = new frmHanTheDatePicker();
             string sqlC = "insert into student values ('" + con.taoID("S", sqlR) + "', N'" + txtTenDocGia.EditValue.ToString() + "', '" + Convert.ToDateTime(txtNgaySinh.EditValue.ToString()).ToString("yyyy-MM-dd") + "', N'" + txtDiaChi.EditValue.ToString() + "', '" + txtSoDienThoai.EditValue.ToString() + "')";
             if (con.exeData(sqlC))
             {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    string sql = "insert into librarycard values ('" + con.taoID("S", sqlT) + "', N'" + txtTenDocGia.EditValue.ToString() + "', '" + Convert.ToDateTime(DateTime.Now.ToString()).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(frmHanTheDatePicker.date.ToString()).ToString("yyyy-MM-dd") + "')";
+                    con.exeData(sql);
+                }
                 loadData();
                 XtraMessageBox.Show("Thêm độc giả thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnLamMoi.PerformClick();
@@ -151,6 +158,8 @@ namespace QuanLyThuVien
             }
             if (XtraMessageBox.Show("Bạn có chắc chắn muốn xoá độc giả đang chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                string sql = "delete from librarycard where id_student = '" + txtMaDocGia.EditValue.ToString() + "'"; con.exeData(sql);
+                con.exeData(sql);
                 string sqlD = "delete from student where id_student = '" + txtMaDocGia.EditValue.ToString() + "'";
                 if (con.exeData(sqlD))
                 {

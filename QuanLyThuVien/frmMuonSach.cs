@@ -59,7 +59,7 @@ namespace QuanLyThuVien
             dtSachMuon.Columns.Add("bookname");
             dtSachMuon.Columns.Add("author");
             dtSachMuon.Columns.Add("lendingdate");
-            dtSachMuon.Columns.Add("dateexpect");
+            dtSachMuon.Columns.Add("dateexpired");
             dtSachMuon.Columns.Add("deposit");
             dtSachMuon.Columns["deposit"].DataType = typeof(Int32);
             dtSachMuon.Columns.Add("id_provided");
@@ -72,7 +72,7 @@ namespace QuanLyThuVien
             dtPhieuMuon.Columns.Add("bookname");
             dtPhieuMuon.Columns.Add("author");
             dtPhieuMuon.Columns.Add("lendingdate");
-            dtPhieuMuon.Columns.Add("dateexpect");
+            dtPhieuMuon.Columns.Add("dateexpired");
             dtPhieuMuon.Columns.Add("deposit");
             dtPhieuMuon.Columns["deposit"].DataType = typeof(Int32);
             foreach (DataRow item in dtSachMuon.Rows)
@@ -82,7 +82,7 @@ namespace QuanLyThuVien
                 row["bookname"] = item["bookname"];
                 row["author"] = item["author"];
                 row["lendingdate"] = item["lendingdate"];
-                row["dateexpect"] = item["dateexpect"];
+                row["dateexpired"] = item["dateexpired"];
                 row["deposit"] = item["deposit"];
                 dtPhieuMuon.Rows.Add(row);
             }
@@ -117,74 +117,84 @@ namespace QuanLyThuVien
 
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
-            try
+            string sql = "select expirydate from librarycard where id_student = '"+ txtMaDocGia.EditValue.ToString() +"'";
+            string date = con.exeValue(sql);
+            if(Convert.ToDateTime(date.ToString()).CompareTo(DateTime.Now) < 0)
             {
-                if ((txtMaDocGia.EditValue == null) || (txtMaDocGia.EditValue.ToString().Equals("")))
+                XtraMessageBox.Show("Thẻ thư viện đã hết hạn\r\nVui lòng gia hạn thẻ thư viện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnLamMoi.PerformClick();
+            }
+            else
+            {
+                try
                 {
-                    XtraMessageBox.Show("Bạn chưa chọn độc giả\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                if (dtSachMuon.Rows.Count == 0)
-                {
-                    XtraMessageBox.Show("Bạn chưa sách để mượn\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                int row_index = gvSachMuon.FocusedRowHandle;
-                int amount = 0;
-                bool check = false;
-                foreach (DataRow item in dtSachMuon.Rows)
-                {
-                    string sqlRB = "select amount from provided where id_provided = '" + item["id_provided"] + "'";
-                    DataTable dt = new DataTable();
-                    dt = con.readData(sqlRB);
-                    if (dt != null)
+                    if ((txtMaDocGia.EditValue == null) || (txtMaDocGia.EditValue.ToString().Equals("")))
                     {
-                        foreach (DataRow dr in dt.Rows)
+                        XtraMessageBox.Show("Bạn chưa chọn độc giả\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    if (dtSachMuon.Rows.Count == 0)
+                    {
+                        XtraMessageBox.Show("Bạn chưa chọn sách để mượn\r\nVui lòng chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    int row_index = gvSachMuon.FocusedRowHandle;
+                    int amount = 0;
+                    bool check = false;
+                    foreach (DataRow item in dtSachMuon.Rows)
+                    {
+                        string sqlRB = "select amount from provided where id_provided = '" + item["id_provided"] + "'";
+                        DataTable dt = new DataTable();
+                        dt = con.readData(sqlRB);
+                        if (dt != null)
                         {
-                            amount = Convert.ToInt32(dr["amount"].ToString()) - 1;
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                amount = Convert.ToInt32(dr["amount"].ToString()) - 1;
+                            }
+                        }
+                        string sqlU = "update provided set amount = '" + amount + "' where id_provided = '" + item["id_provided"] + "'";
+                        string sqlC = "insert into lendingbook values ('" + con.taoID("LB", sqlR) + "', '" + id + "', '" + item["id_provided"] + "', '" + txtMaDocGia.EditValue.ToString() + "', '" + Convert.ToDateTime(item["lendingdate"], System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) + "', '" + Convert.ToDateTime(item["dateexpired"], System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) + "', '" + Convert.ToInt32(item["deposit"].ToString()) + "')";
+                        if (con.exeData(sqlU) && con.exeData(sqlC))
+                        {
+                            check = true;
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
-                    string sqlU = "update provided set amount = '" + amount + "' where id_provided = '" + item["id_provided"] + "'";
-                    string sqlC = "insert into lendingbook values ('" + con.taoID("LB", sqlR) + "', '" + id + "', '" + item["id_provided"] + "', '" + txtMaDocGia.EditValue.ToString() + "', '" + Convert.ToDateTime(item["lendingdate"], System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) + "', '" + Convert.ToDateTime(item["dateexpect"], System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) + "', '" + Convert.ToInt32(item["deposit"].ToString()) + "')";
-                    if (con.exeData(sqlU) && con.exeData(sqlC))
+                    if (check)
                     {
-                        check = true;
+                        XtraMessageBox.Show("Lập phiếu mượn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (XtraMessageBox.Show("Bạn có muốn xuất phiếu mượn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            creatDTPhieuMuon();
+                            int tong = 0;
+                            foreach (DataRow item in dtPhieuMuon.Rows)
+                            {
+                                tong += Convert.ToInt32(item["deposit"]);
+                            }
+                            rptPhieuMuon rp = new rptPhieuMuon();
+                            rp.DataSource = dtPhieuMuon;
+                            rp.initData(DateTime.Now.Day.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString(), frmLogin.name_user, txtMaDocGia.EditValue.ToString(), txtHoTen.EditValue.ToString(), tong);
+                            rpt = rp;
+                            frmPhieuMuon frm = new frmPhieuMuon();
+                            frm.Show();
+                        }
+                        btnLamMoi.PerformClick();
                     }
                     else
                     {
-                        break;
+                        XtraMessageBox.Show("Lập phiếu mượn thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnLamMoi.PerformClick();
                     }
                 }
-                if (check)
+                catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Lập phiếu mượn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (XtraMessageBox.Show("Bạn có muốn xuất phiếu mượn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        creatDTPhieuMuon();
-                        int tong = 0;
-                        foreach (DataRow item in dtPhieuMuon.Rows)
-                        {
-                            tong += Convert.ToInt32(item["deposit"]);
-                        }
-                        rptPhieuMuon rp = new rptPhieuMuon();
-                        rp.DataSource = dtPhieuMuon;
-                        rp.initData(DateTime.Now.Day.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString(), frmLogin.name_user, txtMaDocGia.EditValue.ToString(), txtHoTen.EditValue.ToString(), tong);
-                        rpt = rp;
-                        frmPhieuMuon frm = new frmPhieuMuon();
-                        frm.Show();
-                    }
-                    btnLamMoi.PerformClick();
+                    throw;
                 }
-                else
-                {
-                    XtraMessageBox.Show("Lập phiếu mượn thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnLamMoi.PerformClick();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            }    
         }
 
         private void btnThem_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -237,7 +247,7 @@ namespace QuanLyThuVien
                 row["bookname"] = gvSach.GetRowCellValue(row_index, "bookname").ToString();
                 row["author"] = gvSach.GetRowCellValue(row_index, "author").ToString();
                 row["lendingdate"] = DateTime.Now.ToString("dd-MM-yyyy");
-                row["dateexpect"] = Convert.ToDateTime(frmDatePicker.date).ToString("dd/MM/yyyy");
+                row["dateexpired"] = Convert.ToDateTime(frmDatePicker.date).ToString("dd/MM/yyyy");
                 row["deposit"] = Convert.ToInt32(gvSach.GetRowCellValue(row_index, "deposit"));
                 row["id_provided"] = gvSach.GetRowCellValue(row_index, "id_provided").ToString();
                 dtSachMuon.Rows.Add(row);

@@ -49,6 +49,7 @@
             this.btnTraSach = new DevExpress.XtraBars.BarButtonItem();
             this.btnTimKiemDocGia = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanlythe = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.rbgTimKiem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnTimKiemSach = new DevExpress.XtraBars.BarButtonItem();
             this.rbgThongKe = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,6 +58,7 @@
             this.btnSachQuaHan = new DevExpress.XtraBars.BarButtonItem();
             this.btnSachBiHong = new DevExpress.XtraBars.BarButtonItem();
             this.btnDocGiaDangMuon = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDauSach = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.txtXinChao = new DevExpress.XtraBars.BarHeaderItem();
@@ -205,6 +207,7 @@
             this.rbgQuanLy.ItemLinks.Add(this.btnTraSach);
             this.rbgQuanLy.ItemLinks.Add(this.btnTimKiemDocGia);
             this.rbgQuanLy.ItemLinks.Add(this.btnQuanlythe);
+            this.rbgQuanLy.ItemLinks.Add(this.barButtonItem1);
             this.rbgQuanLy.Name = "rbgQuanLy";
             this.rbgQuanLy.Text = "Quản lý";
             // 
@@ -245,6 +248,12 @@
             this.btnQuanlythe.Name = "btnQuanlythe";
             this.btnQuanlythe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanlythe_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Test";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // rbgTimKiem
             // 
             this.rbgTimKiem.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
@@ -270,6 +279,7 @@
             this.rbgThongKe.ItemLinks.Add(this.btnSachQuaHan);
             this.rbgThongKe.ItemLinks.Add(this.btnSachBiHong);
             this.rbgThongKe.ItemLinks.Add(this.btnDocGiaDangMuon);
+            this.rbgThongKe.ItemLinks.Add(this.btnDauSach);
             this.rbgThongKe.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.TwoRows;
             this.rbgThongKe.Name = "rbgThongKe";
             this.rbgThongKe.Text = "Thống kê";
@@ -323,6 +333,15 @@
             this.btnDocGiaDangMuon.Name = "btnDocGiaDangMuon";
             this.btnDocGiaDangMuon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDocGiaDangMuon_ItemClick);
             // 
+            // btnDauSach
+            // 
+            this.btnDauSach.Caption = "Đầu sách được phục vụ";
+            this.btnDauSach.Id = 4;
+            this.btnDauSach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDauSach.ImageOptions.Image")));
+            this.btnDauSach.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDauSach.ImageOptions.LargeImage")));
+            this.btnDauSach.Name = "btnDauSach";
+            this.btnDauSach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDauSach_ItemClick);
+            // 
             // barHeaderItem1
             // 
             this.barHeaderItem1.Caption = "Hê looooooo!";
@@ -360,9 +379,11 @@
             this.btnSuaThongTin,
             this.btnSachHienCo,
             this.btnSachBiHong,
-            this.btnQuanlythe});
+            this.btnQuanlythe,
+            this.btnDauSach,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbChucNang,
@@ -376,7 +397,7 @@
             // 
             this.txtXinChao.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXinChao.Appearance.Options.UseFont = true;
-            this.txtXinChao.Caption = "Xin chào: Nguyễn Gia Cảnh";
+            this.txtXinChao.Caption = "Họ tên";
             this.txtXinChao.Id = 24;
             this.txtXinChao.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("txtXinChao.ImageOptions.SvgImage")));
             this.txtXinChao.Name = "txtXinChao";
@@ -450,5 +471,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.BarButtonItem btnSachBiHong;
         private DevExpress.XtraBars.BarButtonItem btnQuanlythe;
+        private DevExpress.XtraBars.BarButtonItem btnDauSach;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
